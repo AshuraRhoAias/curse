@@ -61,7 +61,7 @@ const TrainingSchedule = () => {
                             textShadow: '2px 2px 4px rgba(0,0,0,0.5)',
                             lineHeight: '1.2'
                         }}>
-                            GLOBAL SPORTS INSTITUTE
+                            SPORTS INSTITUTE
                         </h1>
                         <div style={{
                             width: window.innerWidth < 768 ? '60px' : '100px',
@@ -792,7 +792,7 @@ const TrainingSchedule = () => {
                     marginBottom: '20px',
                     letterSpacing: window.innerWidth < 768 ? '1px' : '2px'
                 }}>
-                    GLOBAL SPORTS INSTITUTE
+                    SPORTS INSTITUTE
                 </h2>
                 <div style={{
                     display: 'grid',
@@ -801,18 +801,11 @@ const TrainingSchedule = () => {
                     marginBottom: '30px',
                     fontSize: window.innerWidth < 768 ? '12px' : '14px'
                 }}>
-                    <div>
-                        <strong>📍 SEDE PRINCIPAL</strong><br />
-                        Nueva York, Estados Unidos
-                    </div>
-                    <div>
-                        <strong>🌐 OFICINAS REGIONALES</strong><br />
-                        Londres • Madrid • São Paulo
-                    </div>
-                    <div>
+                    
+                    {/* <div>
                         <strong>📧 CONTACTO DIRECTO</strong><br />
                         certification@globalsports.edu
-                    </div>
+                    </div> */}
                 </div>
                 <div style={{
                     borderTop: '2px solid #000',
@@ -820,7 +813,7 @@ const TrainingSchedule = () => {
                     fontSize: window.innerWidth < 768 ? '10px' : '12px',
                     fontWeight: 'bold'
                 }}>
-                    © 2025 Global Sports Institute • Excelencia • Innovación • Resultados
+                    © 2025 Nacional Sports Institute • Excelencia • Innovación • Resultados
                 </div>
             </div>
         </div>
