@@ -152,7 +152,7 @@ const TrainingSchedule = () => {
                         lineHeight: '1.8',
                         marginBottom: '25px'
                     }}>
-                        Únete a la élite mundial de entrenadores deportivos con nuestra certificación internacional.
+                        Únete a la élite mundial de entrenadores deportivos con nuestra certificación nacional.
                         Más de <strong style={{ color: '#dc143c' }}>50,000 profesionales</strong> en <strong style={{ color: '#dc143c' }}>85 países</strong>
                         confían en nuestros programas de formación.
                     </p>
