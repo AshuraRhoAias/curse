@@ -1,0 +1,383 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradientes Premium -->
+    <linearGradient id="premiumGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+      <stop offset="30%" style="stop-color:#FFA500;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#FFD700;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#B8860B;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="premiumRed" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF4444;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#DC143C;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8B0000;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="premiumBlack" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#000000;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#1a1a1a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#000000;stop-opacity:1" />
+    </linearGradient>
+    
+    <radialGradient id="glowEffect" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#FFD700;stop-opacity:0.8" />
+      <stop offset="70%" style="stop-color:#FFA500;stop-opacity:0.4" />
+      <stop offset="100%" style="stop-color:#FFD700;stop-opacity:0" />
+    </radialGradient>
+    
+    <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#DC143C;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#000000;stop-opacity:0.6" />
+    </radialGradient>
+    
+    <!-- Filtros Profesionales -->
+    <filter id="premiumShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+      <feOffset dx="2" dy="2" result="offset"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.5"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <filter id="neonGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <filter id="innerShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur"/>
+      <feOffset in="blur" dx="1" dy="1"/>
+    </filter>
+  </defs>
+  
+  <!-- Base circular elegante -->
+  <circle cx="100" cy="100" r="90" 
+          fill="url(#premiumBlack)" 
+          stroke="url(#premiumGold)" 
+          stroke-width="3" 
+          filter="url(#premiumShadow)">
+    <animate attributeName="stroke-width" 
+             values="3;5;3;4;3" 
+             dur="3s" 
+             repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Anillo interno decorativo -->
+  <circle cx="100" cy="100" r="75" 
+          fill="none" 
+          stroke="url(#premiumRed)" 
+          stroke-width="1" 
+          opacity="0.6">
+    <animate attributeName="opacity" 
+             values="0.6;0.3;0.6;0.4;0.6" 
+             dur="2s" 
+             repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- DISEÑO PRINCIPAL: BARRA CON DISCOS ESTILIZADA -->
+  
+  <!-- Barra central principal -->
+  <rect x="30" y="95" width="140" height="10" 
+        fill="url(#premiumGold)" 
+        filter="url(#neonGlow)" 
+        rx="5">
+    <animate attributeName="fill" 
+             values="url(#premiumGold);url(#premiumRed);url(#premiumGold)" 
+             dur="4s" 
+             repeatCount="indefinite"/>
+  </rect>
+  
+  <!-- Grip central con detalles -->
+  <rect x="80" y="92" width="40" height="16" 
+        fill="url(#premiumBlack)" 
+        stroke="url(#premiumGold)" 
+        stroke-width="2" 
+        rx="3" 
+        filter="url(#innerShadow)">
+    <animate attributeName="stroke" 
+             values="url(#premiumGold);url(#premiumRed);url(#premiumGold)" 
+             dur="3s" 
+             repeatCount="indefinite"/>
+  </rect>
+  
+  <!-- Líneas de textura en el grip -->
+  <g opacity="0.8">
+    <line x1="85" y1="94" x2="85" y2="106" stroke="#FFD700" stroke-width="1"/>
+    <line x1="90" y1="94" x2="90" y2="106" stroke="#FFD700" stroke-width="1"/>
+    <line x1="95" y1="94" x2="95" y2="106" stroke="#FFD700" stroke-width="1"/>
+    <line x1="105" y1="94" x2="105" y2="106" stroke="#FFD700" stroke-width="1"/>
+    <line x1="110" y1="94" x2="110" y2="106" stroke="#FFD700" stroke-width="1"/>
+    <line x1="115" y1="94" x2="115" y2="106" stroke="#FFD700" stroke-width="1"/>
+  </g>
+  
+  <!-- DISCOS HEXAGONALES MODERNOS -->
+  
+  <!-- Disco izquierdo externo -->
+  <polygon points="50,70 65,75 65,90 65,110 65,125 50,130 35,125 35,110 35,90 35,75" 
+           fill="url(#premiumGold)" 
+           stroke="url(#premiumBlack)" 
+           stroke-width="2" 
+           filter="url(#neonGlow)">
+    <animateTransform attributeName="transform" 
+                      type="rotate" 
+                      values="0 50 100;360 50 100" 
+                      dur="8s" 
+                      repeatCount="indefinite"/>
+  </polygon>
+  
+  <!-- Disco derecho externo -->
+  <polygon points="150,70 165,75 165,90 165,110 165,125 150,130 135,125 135,110 135,90 135,75" 
+           fill="url(#premiumGold)" 
+           stroke="url(#premiumBlack)" 
+           stroke-width="2" 
+           filter="url(#neonGlow)">
+    <animateTransform attributeName="transform" 
+                      type="rotate" 
+                      values="0 150 100;-360 150 100" 
+                      dur="8s" 
+                      repeatCount="indefinite"/>
+  </polygon>
+  
+  <!-- Discos internos más pequeños -->
+  <polygon points="75,80 85,83 85,95 85,105 85,117 75,120 65,117 65,105 65,95 65,83" 
+           fill="url(#premiumRed)" 
+           stroke="url(#premiumGold)" 
+           stroke-width="2" 
+           filter="url(#premiumShadow)">
+    <animateTransform attributeName="transform" 
+                      type="rotate" 
+                      values="0 75 100;180 75 100;360 75 100" 
+                      dur="6s" 
+                      repeatCount="indefinite"/>
+  </polygon>
+  
+  <polygon points="125,80 135,83 135,95 135,105 135,117 125,120 115,117 115,105 115,95 115,83" 
+           fill="url(#premiumRed)" 
+           stroke="url(#premiumGold)" 
+           stroke-width="2" 
+           filter="url(#premiumShadow)">
+    <animateTransform attributeName="transform" 
+                      type="rotate" 
+                      values="0 125 100;-180 125 100;-360 125 100" 
+                      dur="6s" 
+                      repeatCount="indefinite"/>
+  </polygon>
+  
+  <!-- Centros de los discos con detalles -->
+  <circle cx="50" cy="100" r="8" fill="url(#centerGlow)" filter="url(#neonGlow)">
+    <animate attributeName="r" values="8;10;8;6;8" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="150" cy="100" r="8" fill="url(#centerGlow)" filter="url(#neonGlow)">
+    <animate attributeName="r" values="8;6;8;10;8" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="75" cy="100" r="6" fill="url(#premiumBlack)" stroke="url(#premiumGold)" stroke-width="1"/>
+  <circle cx="125" cy="100" r="6" fill="url(#premiumBlack)" stroke="url(#premiumGold)" stroke-width="1"/>
+  
+  <!-- ELEMENTOS GEOMÉTRICOS MODERNOS -->
+  
+  <!-- Triángulos de poder superior -->
+  <g transform="translate(100,100)">
+    <polygon points="0,-60 15,-40 -15,-40" 
+             fill="url(#premiumGold)" 
+             filter="url(#neonGlow)">
+      <animate attributeName="opacity" 
+               values="1;0.5;1;0.7;1" 
+               dur="2s" 
+               repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" 
+                        type="scale" 
+                        values="1;1.2;1;0.8;1" 
+                        dur="2s" 
+                        repeatCount="indefinite"/>
+    </polygon>
+    
+    <!-- Triángulo inferior -->
+    <polygon points="0,60 15,40 -15,40" 
+             fill="url(#premiumRed)" 
+             filter="url(#neonGlow)">
+      <animate attributeName="opacity" 
+               values="1;0.7;1;0.5;1" 
+               dur="2.5s" 
+               repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" 
+                        type="scale" 
+                        values="1;0.8;1;1.2;1" 
+                        dur="2.5s" 
+                        repeatCount="indefinite"/>
+    </polygon>
+  </g>
+  
+  <!-- LÍNEAS DE VELOCIDAD DINÁMICAS -->
+  <g opacity="0.7">
+    <!-- Líneas izquierdas -->
+    <path d="M15,90 L35,95 M15,100 L35,100 M15,110 L35,105" 
+          stroke="url(#premiumGold)" 
+          stroke-width="3" 
+          stroke-linecap="round">
+      <animate attributeName="opacity" 
+               values="0.7;0.3;0.7;0.5;0.7" 
+               dur="1.5s" 
+               repeatCount="indefinite"/>
+    </path>
+    
+    <!-- Líneas derechas -->
+    <path d="M165,95 L185,90 M165,100 L185,100 M165,105 L185,110" 
+          stroke="url(#premiumRed)" 
+          stroke-width="3" 
+          stroke-linecap="round">
+      <animate attributeName="opacity" 
+               values="0.7;0.5;0.7;0.3;0.7" 
+               dur="1.8s" 
+               repeatCount="indefinite"/>
+    </path>
+  </g>
+  
+  <!-- ELEMENTOS ORBITALES -->
+  <g transform="translate(100,100)">
+    <!-- Órbita 1 -->
+    <circle r="45" fill="none" stroke="url(#premiumGold)" stroke-width="1" opacity="0.4">
+      <animate attributeName="opacity" 
+               values="0.4;0.1;0.4;0.2;0.4" 
+               dur="3s" 
+               repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Partículas orbitales -->
+    <circle cx="45" cy="0" r="3" fill="url(#premiumGold)" filter="url(#neonGlow)">
+      <animateTransform attributeName="transform" 
+                        type="rotate" 
+                        values="0;360" 
+                        dur="4s" 
+                        repeatCount="indefinite"/>
+      <animate attributeName="r" 
+               values="3;5;3;2;3" 
+               dur="2s" 
+               repeatCount="indefinite"/>
+    </circle>
+    
+    <circle cx="-45" cy="0" r="2.5" fill="url(#premiumRed)" filter="url(#neonGlow)">
+      <animateTransform attributeName="transform" 
+                        type="rotate" 
+                        values="0;-360" 
+                        dur="5s" 
+                        repeatCount="indefinite"/>
+      <animate attributeName="r" 
+               values="2.5;4;2.5;1.5;2.5" 
+               dur="2.2s" 
+               repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- DESTELLOS DE ENERGÍA -->
+  <g>
+    <!-- Destello superior izquierdo -->
+    <g transform="translate(40,50)">
+      <polygon points="0,0 8,3 0,6 -8,3" 
+               fill="url(#glowEffect)" 
+               filter="url(#neonGlow)">
+        <animateTransform attributeName="transform" 
+                          type="rotate" 
+                          values="0;360" 
+                          dur="3s" 
+                          repeatCount="indefinite"/>
+        <animate attributeName="opacity" 
+                 values="1;0.3;1;0.6;1" 
+                 dur="1.5s" 
+                 repeatCount="indefinite"/>
+      </polygon>
+    </g>
+    
+    <!-- Destello superior derecho -->
+    <g transform="translate(160,50)">
+      <polygon points="0,0 8,3 0,6 -8,3" 
+               fill="url(#glowEffect)" 
+               filter="url(#neonGlow)">
+        <animateTransform attributeName="transform" 
+                          type="rotate" 
+                          values="0;-360" 
+                          dur="3.5s" 
+                          repeatCount="indefinite"/>
+        <animate attributeName="opacity" 
+                 values="1;0.6;1;0.3;1" 
+                 dur="1.7s" 
+                 repeatCount="indefinite"/>
+      </polygon>
+    </g>
+    
+    <!-- Destellos inferiores -->
+    <g transform="translate(40,150)">
+      <polygon points="0,0 6,2 0,4 -6,2" 
+               fill="url(#premiumRed)" 
+               filter="url(#neonGlow)">
+        <animateTransform attributeName="transform" 
+                          type="rotate" 
+                          values="0;360" 
+                          dur="4s" 
+                          repeatCount="indefinite"/>
+        <animate attributeName="opacity" 
+                 values="1;0.4;1;0.7;1" 
+                 dur="1.8s" 
+                 repeatCount="indefinite"/>
+      </polygon>
+    </g>
+    
+    <g transform="translate(160,150)">
+      <polygon points="0,0 6,2 0,4 -6,2" 
+               fill="url(#premiumRed)" 
+               filter="url(#neonGlow)">
+        <animateTransform attributeName="transform" 
+                          type="rotate" 
+                          values="0;-360" 
+                          dur="4.5s" 
+                          repeatCount="indefinite"/>
+        <animate attributeName="opacity" 
+                 values="1;0.7;1;0.4;1" 
+                 dur="1.9s" 
+                 repeatCount="indefinite"/>
+      </polygon>
+    </g>
+  </g>
+  
+  <!-- CENTRO DE PODER FINAL -->
+  <circle cx="100" cy="100" r="12" 
+          fill="url(#centerGlow)" 
+          filter="url(#neonGlow)">
+    <animate attributeName="r" 
+             values="12;16;12;8;12" 
+             dur="3s" 
+             repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" 
+                      type="rotate" 
+                      values="0 100 100;360 100 100" 
+                      dur="6s" 
+                      repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Anillo central rotativo -->
+  <circle cx="100" cy="100" r="18" 
+          fill="none" 
+          stroke="url(#premiumGold)" 
+          stroke-width="2" 
+          opacity="0.8" 
+          stroke-dasharray="5,5">
+    <animateTransform attributeName="transform" 
+                      type="rotate" 
+                      values="0 100 100;-360 100 100" 
+                      dur="4s" 
+                      repeatCount="indefinite"/>
+    <animate attributeName="opacity" 
+             values="0.8;0.4;0.8;0.6;0.8" 
+             dur="2s" 
+             repeatCount="indefinite"/>
+  </circle>
+</svg>
