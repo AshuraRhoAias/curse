@@ -25,7 +25,7 @@ const TrainerProfile = () => {
           perspective: 1200px;
           perspective-origin: center center;
           width: 100%;
-          min-height: 100vh;
+          max-height: 100vh;
           display: flex;
           justify-content: center;
           align-items: center;
@@ -132,7 +132,6 @@ const TrainerProfile = () => {
           position: absolute;
           border-radius: 50%;
           opacity: 0.8;
-          filter: blur(0.5px);
         }
 
         .particle:nth-child(1) { 
@@ -383,17 +382,6 @@ const TrainerProfile = () => {
           }
         }
 
-        @keyframes hologramScan {
-          0% { top: 0%; opacity: 1; }
-          50% { opacity: 0.7; }
-          100% { top: 100%; opacity: 0; }
-        }
-
-        @keyframes interference {
-          0% { transform: translateX(0px); }
-          100% { transform: translateX(2px); }
-        }
-
         .light-effects {
           position: absolute;
           inset: 0;
@@ -527,171 +515,68 @@ const TrainerProfile = () => {
           transform: translateZ(30px);
         }
 
+        /* TEXTO MEJORADO - NÍTIDO Y CLARO */
         .name-title {
           font-size: clamp(24px, 6vw, 72px);
-          font-weight: bold;
-          background: linear-gradient(45deg, #ffffff 0%, #f0f0f0 50%, #ffffff 100%);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
+          font-weight: 800;
+          color: #ffffff;
           letter-spacing: -0.025em;
           line-height: 1;
-          text-shadow: 
-            1px 1px 0px #cccccc,
-            2px 2px 0px #aaaaaa,
-            3px 3px 0px #888888,
-            4px 4px 0px #666666,
-            5px 5px 0px #444444,
-            6px 6px 0px #222222,
-            7px 7px 10px rgba(0, 0, 0, 0.8),
-            0 0 30px rgba(255, 215, 0, 0.3);
-          transform: translateZ(15px) rotateX(5deg);
+          text-rendering: optimizeLegibility;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          transform: translateZ(15px);
           transition: all 0.3s ease;
-          animation: titleEntrance 1.5s ease-out 0.5s both, titleFloat 4s ease-in-out infinite 2s;
+          animation: titleEntrance 1.5s ease-out 0.5s both;
+          text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
         }
 
         @keyframes titleEntrance {
           0% {
             opacity: 0;
-            transform: translateZ(-50px) rotateX(45deg) translateY(50px);
-            text-shadow: none;
+            transform: translateZ(-50px) translateY(50px);
           }
           100% {
             opacity: 1;
-            transform: translateZ(15px) rotateX(5deg) translateY(0px);
-            text-shadow: 
-              1px 1px 0px #cccccc,
-              2px 2px 0px #aaaaaa,
-              3px 3px 0px #888888,
-              4px 4px 0px #666666,
-              5px 5px 0px #444444,
-              6px 6px 0px #222222,
-              7px 7px 10px rgba(0, 0, 0, 0.8),
-              0 0 30px rgba(255, 215, 0, 0.3);
-          }
-        }
-
-        @keyframes titleFloat {
-          0%, 100% { 
-            transform: translateZ(15px) rotateX(5deg) translateY(0px);
-          }
-          50% { 
-            transform: translateZ(20px) rotateX(7deg) translateY(-3px);
+            transform: translateZ(15px) translateY(0px);
           }
         }
 
         .name-title:hover {
-          transform: translateZ(30px) rotateX(12deg) scale(1.02);
-          text-shadow: 
-            2px 2px 0px #cccccc,
-            4px 4px 0px #aaaaaa,
-            6px 6px 0px #888888,
-            8px 8px 0px #666666,
-            10px 10px 0px #444444,
-            12px 12px 0px #222222,
-            14px 14px 20px rgba(0, 0, 0, 0.9),
-            0 0 50px rgba(255, 215, 0, 0.6);
-          animation-play-state: paused;
+          transform: translateZ(25px) scale(1.02);
+          text-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
         }
 
         .surname {
           display: block;
           font-size: clamp(20px, 5vw, 60px);
           margin-top: 8px;
-          background: linear-gradient(45deg, #ffd700 0%, #ffed4e 30%, #ffd700 60%, #ffb000 100%);
-          background-size: 200% 200%;
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-          text-shadow: 
-            1px 1px 0px #e6c200,
-            2px 2px 0px #ccad00,
-            3px 3px 0px #b39900,
-            4px 4px 0px #998500,
-            5px 5px 0px #807000,
-            6px 6px 0px #665c00,
-            7px 7px 15px rgba(0, 0, 0, 0.8),
-            0 0 40px rgba(255, 215, 0, 0.6);
-          transform: translateZ(20px) rotateX(8deg);
+          color: #ffd700;
+          font-weight: 700;
+          text-rendering: optimizeLegibility;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          transform: translateZ(20px);
           transition: all 0.3s ease;
-          animation: 
-            surnameEntrance 1.8s ease-out 0.8s both,
-            glow3d 3s ease-in-out infinite 2.5s,
-            gradientShift 4s ease-in-out infinite,
-            surnameFloat 5s ease-in-out infinite 3s;
+          animation: surnameEntrance 1.8s ease-out 0.8s both;
+          text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
         }
 
         @keyframes surnameEntrance {
           0% {
             opacity: 0;
-            transform: translateZ(-100px) rotateX(90deg) scale(0.5);
-            background-position: 0% 50%;
-          }
-          50% {
-            opacity: 0.7;
-            transform: translateZ(10px) rotateX(45deg) scale(0.8);
+            transform: translateZ(-100px) scale(0.8);
           }
           100% {
             opacity: 1;
-            transform: translateZ(20px) rotateX(8deg) scale(1);
-            background-position: 100% 50%;
-          }
-        }
-
-        @keyframes gradientShift {
-          0%, 100% { background-position: 0% 50%; }
-          50% { background-position: 100% 50%; }
-        }
-
-        @keyframes surnameFloat {
-          0%, 100% { 
-            transform: translateZ(20px) rotateX(8deg) translateY(0px) scale(1);
-          }
-          33% { 
-            transform: translateZ(25px) rotateX(10deg) translateY(-2px) scale(1.01);
-          }
-          66% { 
-            transform: translateZ(22px) rotateX(6deg) translateY(1px) scale(0.99);
+            transform: translateZ(20px) scale(1);
           }
         }
 
         .surname:hover {
-          transform: translateZ(40px) rotateX(15deg) scale(1.08);
-          text-shadow: 
-            2px 2px 0px #e6c200,
-            4px 4px 0px #ccad00,
-            6px 6px 0px #b39900,
-            8px 8px 0px #998500,
-            10px 10px 0px #807000,
-            12px 12px 0px #665c00,
-            14px 14px 25px rgba(0, 0, 0, 0.9),
-            0 0 60px rgba(255, 215, 0, 0.9);
-          animation-play-state: paused;
-        }
-
-        @keyframes glow3d {
-          0%, 100% { 
-            text-shadow: 
-              1px 1px 0px #e6c200,
-              2px 2px 0px #ccad00,
-              3px 3px 0px #b39900,
-              4px 4px 0px #998500,
-              5px 5px 0px #807000,
-              6px 6px 0px #665c00,
-              7px 7px 15px rgba(0, 0, 0, 0.8),
-              0 0 40px rgba(255, 215, 0, 0.6);
-          }
-          50% { 
-            text-shadow: 
-              1px 1px 0px #e6c200,
-              2px 2px 0px #ccad00,
-              3px 3px 0px #b39900,
-              4px 4px 0px #998500,
-              5px 5px 0px #807000,
-              6px 6px 0px #665c00,
-              7px 7px 20px rgba(0, 0, 0, 0.8),
-              0 0 70px rgba(255, 215, 0, 1);
-          }
+          transform: translateZ(30px) scale(1.05);
+          color: #ffed4e;
+          text-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
         }
 
         .title-container {
@@ -712,30 +597,22 @@ const TrainerProfile = () => {
 
         .title-text {
           font-size: clamp(12px, 2.5vw, 20px);
-          background: linear-gradient(45deg, #d1d5db 0%, #ffffff 50%, #d1d5db 100%);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-          font-weight: 500;
+          color: #e5e7eb;
+          font-weight: 600;
           text-transform: uppercase;
           letter-spacing: 0.1em;
           margin: 0;
-          text-shadow: 
-            1px 1px 0px #999999,
-            2px 2px 0px #777777,
-            3px 3px 0px #555555,
-            4px 4px 8px rgba(0, 0, 0, 0.6);
-          transform: translateZ(10px) rotateX(3deg);
+          text-rendering: optimizeLegibility;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          transform: translateZ(10px);
           transition: all 0.3s ease;
+          text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
         }
 
         .title-text:hover {
-          transform: translateZ(15px) rotateX(5deg);
-          text-shadow: 
-            1px 1px 0px #aaaaaa,
-            2px 2px 0px #888888,
-            3px 3px 0px #666666,
-            4px 4px 12px rgba(0, 0, 0, 0.8);
+          transform: translateZ(15px);
+          color: #ffffff;
         }
 
         .certification-section {
@@ -746,33 +623,23 @@ const TrainerProfile = () => {
 
         .section-title {
           font-size: clamp(14px, 3vw, 24px);
-          font-weight: bold;
-          background: linear-gradient(45deg, #ffd700 0%, #ffed4e 50%, #ffd700 100%);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
+          font-weight: 700;
+          color: #ffd700;
           margin-bottom: 24px;
           text-transform: uppercase;
           letter-spacing: 0.1em;
           margin-top: 0;
-          text-shadow: 
-            1px 1px 0px #e6c200,
-            2px 2px 0px #ccad00,
-            3px 3px 0px #b39900,
-            4px 4px 10px rgba(0, 0, 0, 0.6),
-            0 0 25px rgba(255, 215, 0, 0.4);
-          transform: translateZ(12px) rotateX(4deg);
+          text-rendering: optimizeLegibility;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          transform: translateZ(12px);
           transition: all 0.3s ease;
+          text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
         }
 
         .section-title:hover {
-          transform: translateZ(18px) rotateX(6deg);
-          text-shadow: 
-            1px 1px 0px #e6c200,
-            2px 2px 0px #ccad00,
-            3px 3px 0px #b39900,
-            4px 4px 15px rgba(0, 0, 0, 0.8),
-            0 0 35px rgba(255, 215, 0, 0.6);
+          transform: translateZ(18px);
+          color: #ffed4e;
         }
 
         .module-list {
@@ -807,11 +674,11 @@ const TrainerProfile = () => {
         @keyframes moduleEntrance {
           0% {
             opacity: 0;
-            transform: translateZ(-20px) translateX(-50px) rotateY(-45deg);
+            transform: translateZ(-20px) translateX(-50px);
           }
           100% {
             opacity: 1;
-            transform: translateZ(5px) translateX(0px) rotateY(0deg);
+            transform: translateZ(5px) translateX(0px);
           }
         }
 
@@ -830,7 +697,7 @@ const TrainerProfile = () => {
         }
 
         .module-item:hover {
-          transform: translateZ(20px) scale(1.03) rotateY(2deg);
+          transform: translateZ(15px) scale(1.02);
           background: rgba(255, 215, 0, 0.08);
           box-shadow: 
             0 15px 35px rgba(255, 215, 0, 0.15),
@@ -843,42 +710,22 @@ const TrainerProfile = () => {
         }
 
         .module-item:hover .module-dot {
-          background: radial-gradient(circle, #ffd700 0%, #ffed4e 50%, #ffd700 100%);
-          box-shadow: 
-            0 0 20px rgba(255, 215, 0, 0.8),
-            0 0 40px rgba(255, 215, 0, 0.4);
-          transform: translateZ(8px) scale(1.4) rotateZ(180deg);
+          background: #ffd700;
+          box-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+          transform: translateZ(8px) scale(1.3);
         }
 
         .module-dot {
           width: 10px;
           height: 10px;
           border-radius: 50%;
-          margin-top: 12px;
+          margin-top: 8px;
           margin-right: 20px;
           flex-shrink: 0;
-          background: radial-gradient(circle, #dc143c 0%, #ff6b6b 100%);
+          background: #dc143c;
           transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-          box-shadow: 
-            0 0 10px rgba(220, 20, 60, 0.4),
-            inset 0 1px 0 rgba(255, 255, 255, 0.3);
+          box-shadow: 0 0 10px rgba(220, 20, 60, 0.4);
           transform: translateZ(3px);
-          animation: dotPulse 3s ease-in-out infinite;
-        }
-
-        @keyframes dotPulse {
-          0%, 100% { 
-            transform: translateZ(3px) scale(1);
-            box-shadow: 
-              0 0 10px rgba(220, 20, 60, 0.4),
-              inset 0 1px 0 rgba(255, 255, 255, 0.3);
-          }
-          50% { 
-            transform: translateZ(5px) scale(1.1);
-            box-shadow: 
-              0 0 15px rgba(220, 20, 60, 0.6),
-              inset 0 1px 0 rgba(255, 255, 255, 0.3);
-          }
         }
 
         .module-text {
@@ -886,34 +733,28 @@ const TrainerProfile = () => {
           font-size: clamp(11px, 2vw, 16px);
           line-height: 1.6;
           margin: 0;
-          text-shadow: 
-            1px 1px 0px #999999,
-            2px 2px 4px rgba(0, 0, 0, 0.6);
+          text-rendering: optimizeLegibility;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
           transform: translateZ(3px);
+          text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
         }
 
         .module-number {
-          font-weight: bold;
-          background: linear-gradient(45deg, #ffffff 0%, #f0f0f0 50%, #ffffff 100%);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-          text-shadow: 
-            1px 1px 0px #cccccc,
-            2px 2px 0px #aaaaaa,
-            3px 3px 5px rgba(0, 0, 0, 0.5);
+          font-weight: 700;
+          color: #ffffff;
+          text-rendering: optimizeLegibility;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
           transform: translateZ(3px);
           transition: all 0.3s ease;
         }
 
         .module-description {
-          background: linear-gradient(45deg, #d1d5db 0%, #e5e7eb 50%, #d1d5db 100%);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-          text-shadow: 
-            1px 1px 0px #999999,
-            2px 2px 3px rgba(0, 0, 0, 0.4);
+          color: #d1d5db;
+          text-rendering: optimizeLegibility;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
           transform: translateZ(2px);
         }
 
@@ -927,21 +768,20 @@ const TrainerProfile = () => {
         }
 
         .right-column:hover {
-          transform: translateZ(40px) rotateY(5deg);
+          transform: translateZ(35px);
         }
 
         .trainer-image {
           width: 300px;
-          height: 590px;
-          
+          height: 450px;
           border-radius: 12px;
           box-shadow: 
             0 25px 50px rgba(0, 0, 0, 0.4),
-            0 10px 25px rgba(255, 215, 0, 0.1),
-            inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            0 10px 25px rgba(255, 215, 0, 0.1);
           border: 2px solid rgba(255, 215, 0, 0.2);
           transition: all 0.3s ease;
           transform: translateZ(10px);
+          overflow: hidden;
         }
 
         .trainer-image:hover {
@@ -974,16 +814,14 @@ const TrainerProfile = () => {
         }
 
         .footer-text {
-          background: linear-gradient(45deg, #9ca3af 0%, #d1d5db 50%, #9ca3af 100%);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
+          color: #9ca3af;
           font-size: clamp(10px, 1.5vw, 14px);
           margin: 0;
-          text-shadow: 
-            1px 1px 0px #666666,
-            2px 2px 4px rgba(0, 0, 0, 0.8);
+          text-rendering: optimizeLegibility;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
           transform: translateZ(5px);
+          text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
         }
 
         .decorative-element-1 {
@@ -1044,6 +882,7 @@ const TrainerProfile = () => {
         /* Responsive adjustments */
         @media (max-width: 768px) {
           .scene-container {
+            height: auto;
             perspective: 800px;
             padding: 10px;
           }
@@ -1075,7 +914,7 @@ const TrainerProfile = () => {
 
           .trainer-image {
             width: 240px;
-            height: 590px;
+            height: 360px;
           }
         }
 
@@ -1092,7 +931,7 @@ const TrainerProfile = () => {
 
           .trainer-image {
             width: 180px;
-            height: 590px;
+            height: 270px;
           }
 
           .decorative-element-1,
@@ -1109,7 +948,7 @@ const TrainerProfile = () => {
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        {/* Partículas flotantes mejoradas */}
+        {/* Partículas flotantes */}
         <div className="floating-particles">
           {[...Array(12)].map((_, i) => (
             <div key={i} className="particle"></div>
@@ -1132,7 +971,7 @@ const TrainerProfile = () => {
           <div className="line line-3"></div>
         </div>
 
-        {/* Efectos de luz mejorados */}
+        {/* Efectos de luz */}
         <div className="light-effects">
           <div className="light-effect-1"></div>
           <div className="light-effect-2"></div>
@@ -1206,31 +1045,32 @@ const TrainerProfile = () => {
             {/* Columna derecha - Imagen */}
             <div className="right-column">
               <div
+                className="trainer-image"
                 style={{
-                  width: '200px',
-                  height: '390px',
                   background: 'linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%)',
-                  borderRadius: '12px',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   color: '#666',
                   fontSize: '14px',
                   textAlign: 'center',
-                  border: '2px solid rgba(255, 215, 0, 0.2)',
-                  boxShadow: '0 25px 50px rgba(0, 0, 0, 0.4), 0 10px 25px rgba(255, 215, 0, 0.1)',
-                  transition: 'all 0.3s ease',
-                  transform: 'translateZ(10px)',
-                  position: 'relative',
-                  overflow: 'hidden'
+                  position: 'relative'
                 }}
-                className="trainer-image"
               >
+                <div style={{
+                  width: '100%',
+                  height: '100%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  fontSize: '16px',
+                  color: '#888'
+                }}>
+                  <video src={require('../img/gym.mp4')} autoPlay loop muted playsInline style={{ width: '100%', height: 'auto' }}>
+                    Tu navegador no soporta el elemento de video.
+                  </video>
 
-                <video src={require('../img/gym.mp4')} autoPlay loop muted playsInline style={{ width: '100%', height: 'auto' }}>
-                  Tu navegador no soporta el elemento de video.
-                </video>
-
+                </div>
               </div>
             </div>
           </div>
