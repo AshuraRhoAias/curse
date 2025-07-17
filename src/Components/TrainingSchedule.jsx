@@ -1,4 +1,5 @@
 import React from 'react';
+import TrainerProfile from './TrainerProfile';
 
 const TrainingSchedule = () => {
     return (
@@ -19,7 +20,7 @@ const TrainingSchedule = () => {
                 overflow: 'hidden'
             }}>
                 {/* Top Bar */}
-                <div style={{
+                <div className='bar-header' style={{
                     backgroundColor: '#ffd700',
                     padding: '8px 40px',
                     display: 'flex',
@@ -50,79 +51,7 @@ const TrainingSchedule = () => {
                         opacity: '0.3'
                     }}></div>
 
-                    <div style={{ position: 'relative', zIndex: '2' }}>
-                        <h1 style={{
-                            color: '#ffd700',
-                            fontSize: window.innerWidth < 768 ? '20px' : window.innerWidth < 1024 ? '28px' : '36px',
-                            fontWeight: '900',
-                            letterSpacing: window.innerWidth < 768 ? '1px' : '3px',
-                            margin: '0 0 15px 0',
-                            textTransform: 'uppercase',
-                            textShadow: '2px 2px 4px rgba(0,0,0,0.5)',
-                            lineHeight: '1.2'
-                        }}>
-                            SPORTS INSTITUTE
-                        </h1>
-                        <div style={{
-                            width: window.innerWidth < 768 ? '60px' : '100px',
-                            height: '4px',
-                            backgroundColor: '#dc143c',
-                            margin: '0 auto 20px auto'
-                        }}></div>
-                        <h2 style={{
-                            color: '#fff',
-                            fontSize: window.innerWidth < 768 ? '16px' : '24px',
-                            fontWeight: '700',
-                            margin: '0 0 10px 0',
-                            letterSpacing: window.innerWidth < 768 ? '0.5px' : '1px'
-                        }}>
-                            CERTIFICACIÓN INTERNACIONAL
-                        </h2>
-                        <h3 style={{
-                            color: '#ffd700',
-                            fontSize: window.innerWidth < 768 ? '18px' : '28px',
-                            fontWeight: '800',
-                            margin: '0',
-                            letterSpacing: window.innerWidth < 768 ? '1px' : '2px',
-                            lineHeight: '1.3'
-                        }}>
-                            ENTRENADOR DEPORTIVO PROFESIONAL
-                        </h3>
-
-                        {/* Accreditation Badges */}
-                        <div style={{
-                            display: 'flex',
-                            justifyContent: 'center',
-                            gap: window.innerWidth < 768 ? '10px' : '30px',
-                            marginTop: '25px',
-                            flexWrap: 'wrap'
-                        }}>
-                            <div style={{
-                                backgroundColor: '#ffd700',
-                                color: '#000',
-                                padding: window.innerWidth < 768 ? '6px 10px' : '8px 15px',
-                                borderRadius: '20px',
-                                fontSize: window.innerWidth < 768 ? '10px' : '12px',
-                                fontWeight: 'bold'
-                            }}>🏅 ISO 9001:2015</div>
-                            <div style={{
-                                backgroundColor: '#dc143c',
-                                color: '#fff',
-                                padding: window.innerWidth < 768 ? '6px 10px' : '8px 15px',
-                                borderRadius: '20px',
-                                fontSize: window.innerWidth < 768 ? '10px' : '12px',
-                                fontWeight: 'bold'
-                            }}>🌟 ACSM APPROVED</div>
-                            <div style={{
-                                backgroundColor: '#ffd700',
-                                color: '#000',
-                                padding: window.innerWidth < 768 ? '6px 10px' : '8px 15px',
-                                borderRadius: '20px',
-                                fontSize: window.innerWidth < 768 ? '10px' : '12px',
-                                fontWeight: 'bold'
-                            }}>📜 NASM RECOGNIZED</div>
-                        </div>
-                    </div>
+                    <TrainerProfile />
                 </div>
             </div>
 

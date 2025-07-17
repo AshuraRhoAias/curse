@@ -1,5 +1,5 @@
 import React from 'react'
-import TrainingSchedule from './TrainingSchedule'
+import TrainingSchedule from './Components/TrainingSchedule'
 
 function App() {
   return (
